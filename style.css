@@ -1,0 +1,259 @@
+body {
+  margin: 0;
+  background: white;
+  font-family: cursive;
+}
+
+a {
+  text-decoration: none;
+}
+
+#main-header {
+  height: 5rem;
+  display: flex;
+  justify-content: space-between;
+  text-transform: uppercase;
+  align-items: center;
+  background-color: rgba(179, 179, 85, 0.9);
+  margin: 0;
+  padding: 0 5%;
+}
+
+header a{
+  color: whitesmoke;
+  text-shadow: 1px 1px 2px olive;
+  padding: 5px 10px;
+  border-radius: 0.25em;
+}
+
+header a:hover {
+  color: darkslategray;
+  background-color: rgb(241, 239, 239);
+  text-shadow: none;
+
+  padding: 5px 10px;
+}
+
+#logo {
+  padding: 0;
+  font-size: 3rem;
+  font-weight: bolder;
+}
+
+#logo:hover {
+  background-color: transparent;
+  color: whitesmoke;
+  text-shadow: 1px 1px 2px olive;
+}
+
+#navbar{
+  display: flex;
+  justify-content: space-between;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  min-width: max-content;
+  font-size: 1.25rem;
+}
+
+#navbar li{
+  margin: 0 1rem;
+}
+
+.menu-btn{
+  /* display: flex; -> see @media queri */
+  flex-direction: column;
+  justify-content: space-around;
+  width: 3rem;
+  height: 3rem;
+  display: none;
+
+  padding: 0;
+}
+
+.menu-btn:hover {
+  background-color: transparent;
+  padding: 0;
+}
+
+.menu-btn span{
+  width: 100%;
+  height: 3px;
+  background-color: whitesmoke;
+  box-shadow: 1px 1px 3px olive;
+}
+
+#side-drawer .menu-btn span {
+  background-color: rgb(1, 5, 6);
+
+}
+
+#side-drawer {
+  display: none;
+
+  width: 100%;
+  height: 100%;
+  background-color: rgb(179, 179, 85) ;
+
+  text-shadow: 1px 1px 2px olive;
+  font-size: 2.25rem;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+#side-drawer:target {
+  display: block;
+}
+
+#side-drawer header {
+  height: 5rem;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin: 0;
+  padding: 0 5%;
+}
+
+#side-drawer ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  margin: 0;
+  padding:2rem 5%;
+}
+
+#side-drawer li {
+  margin: 1rem 0;
+}
+
+#side-drawer a{
+  color: whitesmoke;
+}
+
+main h1 {
+  font-size: 3rem;
+  color: darkslategray;
+  text-transform: lowercase;
+  font-family: cursive;
+  min-width: max-content;
+  text-align: center;
+
+  cursor: default;
+}
+
+#meals {
+  width: 80%;
+  padding: 0;
+  display: grid;
+  justify-content: center;
+
+  list-style: none;
+  margin: 2rem auto;
+  grid-template-columns: 1fr 1fr;
+  text-align: center;
+  column-gap: 1.25rem;
+  
+}
+
+.meal-item {
+  margin: 0px auto;
+
+  background-color:rgb(241, 239, 239);
+  /* max-width: 400px; */
+  min-width: 300px;
+
+  border-radius: 6px;
+  border-top-left-radius: 16px;
+  border-bottom-right-radius: 16px;
+  overflow: hidden;
+  padding: 16px;
+
+
+}
+
+.meal-item img {
+  width: 90%;
+  height: 11rem;
+  object-fit: cover;
+  border-radius: 6px;
+  border-top-left-radius: 16px;
+  border-bottom-right-radius: 16px;
+
+  box-shadow: 1px 1px 8px rgb(241, 239, 239);
+
+}
+
+.meal-item-content {
+  width: 85%;
+  max-width: 300px;
+
+  text-transform: uppercase;
+  text-align: center;
+
+  padding: 1.5rem 0 2rem 0;
+  margin: 8px auto 0 auto;
+  background: linear-gradient(180deg, rgba(165, 165, 70, 0.6), rgba(179, 179, 85, 0.6));
+  box-shadow: 1px 1px 8px rgb(241, 239, 239);
+
+
+  border-radius: 6px;
+  border-top-left-radius: 16px;
+  border-bottom-right-radius: 16px;
+
+  cursor:default;
+}
+
+.meal-item-content h2 {
+  color: rgb(1, 5, 6);
+
+  margin: 0;
+  margin-bottom: 1rem;
+
+  font-size: 1.2rem;
+  font-weight: 100;
+}
+
+.btn {
+  color: darkslategray;
+  background-color: whitesmoke;
+  box-shadow: 1px 1px 4px olive;
+
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+
+  font-size: 0.9rem;
+  font-family:sans-serif;
+}
+
+.btn:hover {
+  color: rgb(1, 5, 6);
+}
+
+/* Desktop to mobile styling | for this breaking point and lower I want to apply a certain syle */
+/* Media queries added at the end due to the cascading nature of CSS (from top to bottom) */
+@media (max-width: 48rem) { 
+  main h1 {
+  font-size: 2rem;
+  }
+  
+  #navbar {
+    /* visibility: hidden; */
+    display: none;
+  }
+  
+  #logo {
+    font-size: 2.5rem;
+  }
+  
+  .menu-btn{
+    display: flex;
+  }
+
+  #meals {
+    grid-template-columns: 1fr;
+    row-gap: 1.25rem;
+  }
+}
